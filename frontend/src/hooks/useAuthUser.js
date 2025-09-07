@@ -10,16 +10,16 @@ const useAuthUser = () => {
     retry: false,
   });
 
-  // helper to reset authUser after logout
   const clearAuthUser = () => queryClient.setQueryData(["authUser"], null);
 
   return {
     isLoading: authUser.isLoading,
-    authUser: authUser.data?.user,
+    authUser: authUser.data,  // ✅ assume api.js already returns user object
     clearAuthUser,
   };
 };
 
 export default useAuthUser;
+
 
 
