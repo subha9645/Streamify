@@ -14,7 +14,7 @@ const useAuthUser = () => {
 
   return {
     isLoading: authUser.isLoading,
-    authUser: authUser.data,   // ✅ changed (removed .user)
+    authUser: authUser.data || null, // ✅ safe return
     clearAuthUser,
   };
 };
