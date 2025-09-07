@@ -14,12 +14,13 @@ const useAuthUser = () => {
 
   return {
     isLoading: authUser.isLoading,
-    authUser: authUser.data,  // ✅ assume api.js already returns user object
+    authUser: authUser.data,   // ✅ changed (removed .user)
     clearAuthUser,
   };
 };
 
 export default useAuthUser;
+
 
 
 
